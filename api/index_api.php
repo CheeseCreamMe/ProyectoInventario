@@ -6,8 +6,10 @@ header("Content-Type: application/json; charset=UTF-8");
 
 $data = array(
     array("id" => 1, "nombre" => "Producto 1", "precio" => 10.00),
-    array("id" => 2, "nombre" => "Producto 2", "precio" => 15.00),
-    array("id" => 3, "nombre" => "Producto 3", "precio" => 20.00)
+    array("id" => 2, "nombre" => "xd", "precio" => 15.00),
+    array("id" => 3, "nombre" => "Producto 3", "precio" => 20.00),
+    array("id" => 4, "nombre" => "Producto 3", "precio" => 40.00),
+    array("id" => 5, "nombre" => "Producto 3", "precio" => 2.00)
 );
 
 $json_response = json_encode($data);
