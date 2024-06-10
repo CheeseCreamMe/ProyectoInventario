@@ -60,21 +60,21 @@
 
 <h2>methods in controllers</h2>
 
-    <b> getObject(){}</b><br>
+<b> getObject(){}</b><br>
  
-    <b> getAllObjects(){}</b><br>
+<b> getAllObjects(){}</b><br>
  
-    <b> getObjectById(){}</b><br>
+<b> getObjectById(){}</b><br>
  
-    <b> getObjectsByName(){}</b><br>
+<b> getObjectsByName(){}</b><br>
  
-    <b> getObjectsByLastname(){}</b><br>
+<b> getObjectsByLastname(){}</b><br>
  
-    <b> setObject(){}</b><br>
+<b> setObject(){}</b><br>
  
-    <b> updateObjectById(){}</b><br>
+<b> updateObjectById(){}</b><br>
  
-    <b> replacePassword(){}</b><br>
+<b> replacePassword(){}</b><br>
  
-    <b> deleteObjectById() {}</b><br>
+<b> deleteObjectById() {}</b><br>
  
