@@ -60,21 +60,21 @@
 
 <h2>methods in controllers</h2>
 
-<b> getObject(){}</b><br>
+<b styel="color:#58c4dc;"> getObject<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
  
-<b> getAllObjects(){}</b><br>
+<b styel="color:#58c4dc;"> getAllObjects<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
  
-<b> getObjectById(){}</b><br>
+<b styel="color:#58c4dc;"> getObjectById<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
  
-<b> getObjectsByName(){}</b><br>
+<b styel="color:#58c4dc;"> getObjectsByName<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
  
-<b> getObjectsByLastname(){}</b><br>
+<b styel="color:#58c4dc;"> getObjectsByLastname(<span style="color: #6f5da1;">){</span><span style="color:#7cc8bc;">}<</span>/b><br>
  
-<b> setObject(){}</b><br>
+<b styel="color:#58c4dc;"> setObject<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
  
-<b> updateObjectById(){}</b><br>
+<b styel="color:#58c4dc;"> updateObjectById<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
  
-<b> replacePassword(){}</b><br>
+<b styel="color:#58c4dc;"> replacePassword<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
  
-<b> deleteObjectById() {}</b><br>
+<b styel="color:#58c4dc;"> deleteObjectById<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;"> {</span>}</b><br>
  
