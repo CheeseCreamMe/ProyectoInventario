@@ -1,0 +1,6 @@
+Options All -Indexes
+
+RewriteEngine On
+RewriteBase /proyecto/api/
+RewriteRule ^([a-zA-Z0-9_/-]+)$ index.php?controller=$1 [QSA,L]
+
