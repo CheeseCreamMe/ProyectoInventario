@@ -60,21 +60,22 @@
 
 <h2>methods in controllers</h2>
 
-<b style="color:#58c4dc;"> getObject<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
- 
-<b style="color:#58c4dc;"> getAllObjects<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
- 
-<b style="color:#58c4dc;"> getObjectById<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
- 
-<b style="color:#58c4dc;"> getObjectsByName<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
- 
-<b style="color:#58c4dc;"> getObjectsByLastname<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
- 
-<b style="color:#58c4dc;"> setObject<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
- 
-<b style="color:#58c4dc;"> updateObjectById<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
- 
-<b style="color:#58c4dc;"> replacePassword<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
- 
-<b style="color:#58c4dc;"> deleteObjectById<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;"> {</span>}</b><br>
+<b style="color:#58c4dc;">getObject<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
+
+<b style="color:#58c4dc;">getAllObjects<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
+
+<b style="color:#58c4dc;">getObjectById<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
+
+<b style="color:#58c4dc;">getObjectsByName<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
+
+<b style="color:#58c4dc;">getObjectsByLastname<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
+
+<b style="color:#58c4dc;">setObject<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
+
+<b style="color:#58c4dc;">updateObjectById<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
+
+<b style="color:#58c4dc;">replacePassword<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
+
+<b style="color:#58c4dc;">deleteObjectById<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
+
  
