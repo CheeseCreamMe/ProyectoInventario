@@ -1,6 +1,6 @@
 <h1>Purpose of the project</h1>
-<p>Employee control project: Development and consumption of an API using pure PHP and React.js</p>
-<h2>Languejes</h2>
+<p>I dont  know T_T</p>
+<h1>Languejes</h1>
 <p><strong>PHP:</strong>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/300px-PHP-logo.svg.png" alt="PHP" width="50"></p>
 <p><strong>JS:</strong>
@@ -59,23 +59,13 @@
 ```
 
 <h2>methods in controllers</h2>
+ <p>Updated driver methods are the methods needed to make a CRUD<p><br>
+ <b>create () {}</b><br>
+ <b>update () {}</b><br>
+ <b>readByID () {}</b><br>
+ <b>readAll () {}</b><br>
+ <b>delete () {}</b><br>
+ <b>deleteWWithRelationShip () {}</b><br>
 
-<b style="color:#58c4dc;">getObject<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
-
-<b style="color:#58c4dc;">getAllObjects<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
-
-<b style="color:#58c4dc;">getObjectById<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
-
-<b style="color:#58c4dc;">getObjectsByName<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
-
-<b style="color:#58c4dc;">getObjectsByLastname<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
-
-<b style="color:#58c4dc;">setObject<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
-
-<b style="color:#58c4dc;">updateObjectById<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
-
-<b style="color:#58c4dc;">replacePassword<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
-
-<b style="color:#58c4dc;">deleteObjectById<span style="color: #6f5da1;">()</span><span style="color:#7cc8bc;">{}</span></b><br>
 
  
