@@ -1,6 +1,6 @@
 <?php
 
-require_once "./settings/DBvalues.php";
+require_once "./settings/db_values.php";
 
 class Connection
 {
