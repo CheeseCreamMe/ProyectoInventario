@@ -4,18 +4,19 @@ require_once "./settings/db_values.php";
 
 class Connection
 {
+    protected $conn;
 
-    public function connect()
+    protected function connect()
     {
-        $respuesta = "";
         try {
             //code... 
-            $enlace = new PDO(SGBD, USER, PASSWORD);
-            $respuesta = "conexion exitosa a la base de datos";
-        } catch (Exception $e) {
-            $respuesta = "Error: " . $e->getMessage(); // Captura más específica y mensaje detallado
+            $this->conn = new PDO(SGBD, USER, PASSWORD);
+            $this->conn->exec("set names utf8");
+        } catch(PDOException $exception) {
+            echo "Error de conexión: " . $exception->getMessage();
         }
-        return $respuesta;
+
+        return $this->conn;
     }
 
     protected function cleanString($cadena)
@@ -34,24 +35,4 @@ class Connection
         $cadena = preg_replace($valores_eliminar, "", $cadena);
         return $cadena;
     }
-
-
-    protected function executeConsulta($sql)
-    {
-        $conexion = self::connect()->prepare($sql);
-        $conexion->execute();
-        $respuesta = $conexion->fetchAll(PDO::FETCH_ASSOC);
-        $conexion = null;
-        return $respuesta;
-    }
-
-    protected function executeSelect($tabla)
-    {
-        $conexion = self::connect()->prepare("SELECT * FROM " . $tabla);
-        $conexion->execute();
-        $respuesta = $conexion->fetchAll(PDO::FETCH_ASSOC);
-        $conexion = null;
-        return $respuesta;
-    }
-
 }
