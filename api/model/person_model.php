@@ -2,65 +2,135 @@
 
 class PersonModel {
 
-    private $name;
-    private $id;
-    private $lastname;
-    private $secondName;
-    private $secondLastname;
-    private $edad;
-    private $estado;
-    private $fechaIngreso;
+    public $name;
+    public $id;
+    public $lastname;
+    public $secondName;
+    public $secondLastname;
+    public $edad;
+    public $estado;
+    public $fechaIngreso;
+    public $direccion;
+    public $telefono;
+    public $cargo;
 
-    // Setters
-    protected function setName($name) {
-        $this->name = $name;
+    // Constructor vacío
+    public function __construct() {
     }
-    protected function setId($id) {
+
+    // Constructor con todos los atributos
+    public function __constructWithAllAttributes($id, $name, $lastname, $secondName, $secondLastname, $edad, $estado, $fechaIngreso, $direccion, $telefono, $cargo) {
+        $this->id = $id;
+        $this->name = $name;
+        $this->lastname = $lastname;
+        $this->secondName = $secondName;
+        $this->secondLastname = $secondLastname;
+        $this->edad = $edad;
+        $this->estado = $estado;
+        $this->fechaIngreso = $fechaIngreso;
+        $this->direccion = $direccion;
+        $this->telefono = $telefono;
+        $this->cargo = $cargo;
+    }
+
+    // Constructor con solo el ID
+    public function __constructWithId($id) {
         $this->id = $id;
     }
-    protected function setLastname($lastname) {
-        $this->lastname = $lastname;
+
+    // Constructor con solo el nombre
+    public function __constructWithName($name) {
+        $this->name = $name;
     }
-    protected function setSecondName($secondName) {
-        $this->secondName = $secondName;
-    }
-    protected function setSecondLastname($secondLastname) {
-        $this->secondLastname = $secondLastname;
-    }
-    protected function setEdad($edad) {
-        $this->edad = $edad;
-    }
-    protected function setEstado($estado) {
-        $this->estado = $estado;
-    }
-    protected function setFechaIngreso($fechaIngreso) {
-        $this->fechaIngreso = $fechaIngreso;
-    }
-    // Getters
-    protected function getName() {
+
+    // Getters y Setters
+    public function getName() {
         return $this->name;
     }
-    protected function getId() {
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getId() {
         return $this->id;
     }
-    protected function getLastname() {
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getLastname() {
         return $this->lastname;
     }
-    protected function getSecondName() {
+
+    public function setLastname($lastname) {
+        $this->lastname = $lastname;
+    }
+
+    public function getSecondName() {
         return $this->secondName;
     }
-    protected function getSecondLastname() {
+
+    public function setSecondName($secondName) {
+        $this->secondName = $secondName;
+    }
+
+    public function getSecondLastname() {
         return $this->secondLastname;
     }
-    protected function getEdad() {
+
+    public function setSecondLastname($secondLastname) {
+        $this->secondLastname = $secondLastname;
+    }
+
+    public function getEdad() {
         return $this->edad;
     }
-    protected function getEstado() {
+
+    public function setEdad($edad) {
+        $this->edad = $edad;
+    }
+
+    public function getEstado() {
         return $this->estado;
     }
-    protected function getFechaIngreso() {
+
+    public function setEstado($estado) {
+        $this->estado = $estado;
+    }
+
+    public function getFechaIngreso() {
         return $this->fechaIngreso;
     }
- }
+
+    public function setFechaIngreso($fechaIngreso) {
+        $this->fechaIngreso = $fechaIngreso;
+    }
+
+    public function getDireccion() {
+        return $this->direccion;
+    }
+
+    public function setDireccion($direccion) {
+        $this->direccion = $direccion;
+    }
+
+    public function getTelefono() {
+        return $this->telefono;
+    }
+
+    public function setTelefono($telefono) {
+        $this->telefono = $telefono;
+    }
+
+    public function getCargo() {
+        return $this->cargo;
+    }
+
+    public function setCargo($cargo) {
+        $this->cargo = $cargo;
+    }
+}
 
     
