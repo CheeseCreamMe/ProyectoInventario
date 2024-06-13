@@ -20,16 +20,19 @@
 ```
 └── 📁proyecto
     └── 📁api
-        └── index.php
         └── .htaccess
-        └── 📁controller
-            └── controllers ...
-        └── 📁model
-            └── models ....
-        └── 📁settings
-            └── db_connect.php
-            └── db_values.php
-            └── router.php
+        └── index.php
+        └── router.php
+        └── 📁routes
+            └── 📁controller
+                └── controllers
+            └── 📁model
+                └── DAO, objects
+            └── 📁settings
+                └── db_connect.php
+                └── db_values.php
+        └── 📁sql
+            └── baseDeDatos.sql
     └── 📁myProject
         └── .eslintrc.cjs
         └── .gitignore
@@ -38,17 +41,19 @@
         └── package.json
         └── 📁public
             └── 📁images
-                └── images...
             └── 📁svg
-                └── svg ...
+                └── add.svg
+                └── graph.svg
+                └── mobile_search.svg
+                └── search.svg
+                └── vite.svg
         └── README.md
         └── 📁src
             └── App.jsx
             └── 📁assets
-                └── other assets ...
+                └── react assets
             └── 📁components
-                └── cards.jsx
-                └── panels.jsx
+                └── components
             └── 📁css
                 └── App.css
                 └── index.css
