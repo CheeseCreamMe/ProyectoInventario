@@ -1,9 +1,7 @@
 <?php
 
 class PersonModel {
-
     public $name;
-    public $id;
     public $lastname;
     public $secondName;
     public $secondLastname;
@@ -14,12 +12,7 @@ class PersonModel {
     public $telefono;
     public $cargo;
 
-    // Constructor vacío
-    public function __construct() {
-    }
-
-    // Constructor con todos los atributos
-    public function __constructWithAllAttributes($id, $name, $lastname, $secondName, $secondLastname, $edad, $estado, $fechaIngreso, $direccion, $telefono, $cargo) {
+    public function __construct($id = null, $name = null, $lastname = null, $secondName = null, $secondLastname = null, $edad = null, $estado = null, $fechaIngreso = null, $direccion = null, $telefono = null, $cargo = null) {
         $this->id = $id;
         $this->name = $name;
         $this->lastname = $lastname;
@@ -31,16 +24,6 @@ class PersonModel {
         $this->direccion = $direccion;
         $this->telefono = $telefono;
         $this->cargo = $cargo;
-    }
-
-    // Constructor con solo el ID
-    public function __constructWithId($id) {
-        $this->id = $id;
-    }
-
-    // Constructor con solo el nombre
-    public function __constructWithName($name) {
-        $this->name = $name;
     }
 
     // Getters y Setters
@@ -132,5 +115,5 @@ class PersonModel {
         $this->cargo = $cargo;
     }
 }
-
+?>
     

@@ -1,4 +1,4 @@
 <?php
-require_once "./settings/router.php";
+require_once "./router.php";
 
 ?>

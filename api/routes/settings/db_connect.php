@@ -1,6 +1,6 @@
 <?php
 
-require_once "./settings/db_values.php";
+require_once "./routes/settings/db_values.php";
 
 class Connection
 {
@@ -9,11 +9,10 @@ class Connection
     protected function connect()
     {
         try {
-            //code... 
             $this->conn = new PDO(SGBD, USER, PASSWORD);
             $this->conn->exec("set names utf8");
         } catch(PDOException $exception) {
-            echo "Error de conexión: " . $exception->getMessage();
+            die("Error de conexión: " . $exception->getMessage());
         }
 
         return $this->conn;
@@ -36,3 +35,4 @@ class Connection
         return $cadena;
     }
 }
+?>

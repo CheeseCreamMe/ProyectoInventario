@@ -1,6 +1,6 @@
 <?php
-require_once "./settings/db_connect.php";
-require_once "./model/PersonModel.php";
+require_once "./routes/settings/db_connect.php";
+require_once "./routes/model/PersonModel.php";
 
 class PersonDAO extends Connection {
     private static $tableName = "personas";
