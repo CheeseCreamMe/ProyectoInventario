@@ -4,7 +4,7 @@ $methodName = isset($_GET['method']) ? $_GET['method'] : null;
 
 if ($controllerName && $methodName) {
     // Construir el nombre del archivo y de la clase del controlador
-    $controllerFile = "./controller/" . ucfirst($controllerName) . "_controller.php";
+    $controllerFile = "./routes/controller/" . $controllerName . "_controller.php";
     $controllerClass = ucfirst($controllerName) . "Controller";
 
     if (file_exists($controllerFile)) {
@@ -25,5 +25,6 @@ if ($controllerName && $methodName) {
         echo json_encode(["error" => "Archivo del controlador no encontrado."]);
     }
 } else {
-    echo json_encode(["error" => "Controlador o metodo no especificado."]);
+    echo json_encode(["error" => "Controlador o método no especificado."]);
 }
+?>
