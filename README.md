@@ -1,6 +1,6 @@
-<h1>Purpose of the project</h1>
-<p>I dont  know T_T</p>
-<h1>Languejes</h1>
+# Purpose of the project
+I dont  know T_T
+## Languejes
 <p><strong>PHP:</strong>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/300px-PHP-logo.svg.png" alt="PHP" width="50"></p>
 <p><strong>JS:</strong>
@@ -10,12 +10,13 @@
 <p><strong>CSS:</strong><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/200px-CSS3_logo_and_wordmark.svg.png?20160623125136" alt="CSS" width="50"></p>
 <br>
 
-<h2>frameworks</h2>
+## frameworks
 <p><strong>react:</strong> <a href="https://react.dev/" target="_blank" rel="noopener noreferrer"><img src="https://th.bing.com/th/id/OIP.33CwBYkmnMfpA9Djup22JwHaHa?rs=1&pid=ImgDetMain" alt="JQuery" width="50"></a></p>
 <p><strong>Bootstrap:</strong> <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/200px-Bootstrap_logo.svg.png?20160623125136" alt="Bootstrap" width="50"></a></p>
 
-<h1>Folder Structure</h1>
-<h3>Model View Controller(MVC)</h3>
+# Folder Structure
+
+## Model View Controller(MVC)
 
 ```
 └── 📁proyecto
@@ -62,10 +63,7 @@
     └── package-lock.json
     └── README.md
 ```
-
-<h2>methods expamples</h2>
-
-<h3>Set user or person example<h3>
+## methods expamples
 
 # Ejemplo de Uso de Funciones de Cifrado y Descifrado
 
@@ -87,6 +85,7 @@ json {
 ```
 ### fin del ejemplo
 
+## Ejemplo de para simular el metodo post en la entrada de datos
 ```
 public function get()
     {
@@ -97,7 +96,7 @@ public function get()
     }
 ```
 
-<h3>Encode and decode example<h3>
+### Encode and decode example
 
 ```
     public function get()
@@ -114,23 +113,3 @@ public function get()
         echo 'Datos descifrados: ' . $decodedData . PHP_EOL;
     }
 ```
-
-<h3>Encode and decode example<h3>
-
-```
-    public function get()
-    {
-        $EncryptedKey = $this->key;
-
-        $dataToEncrypt = 'ejemplo de cifrado';
-        $encodedData = $this->encodeData($dataToEncrypt, $EncryptedKey);
-
-        echo 'Datos cifrados: ' . $encodedData . PHP_EOL . '<br>';
-
-        $decodedData = $this->decodeData($encodedData, $EncryptedKey);
-
-        echo 'Datos descifrados: ' . $decodedData . PHP_EOL;
-    }
-```
-
- 
