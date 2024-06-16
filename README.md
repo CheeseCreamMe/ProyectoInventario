@@ -67,24 +67,24 @@
 
 <h3>Set user or person example<h3>
 
-public function get()
+# Ejemplo de Uso de Funciones de Cifrado y Descifrado
+
+## Ejemplo de Formato JSON de Entrada de Datos
+
+```json
 {
-    //ejemplo del formato json de entrada de datos
-    $data = '{
-        "name": "Juan",
-        "second_name": "Carlos",
-        "lastname": "Pérez",
-        "second_lastname": "González",
-        "edad": 30,
-        "estado": "Activo",
-        "fecha_ingreso": "2024-06-13",
-        "direccion": "Calle Falsa 123",
-        "telefono": "123456789",
-        "cargo": "Ingeniero"
-    }';
-    // Simular el POST llamando a la función createPerson con los datos JSON
-    $this->createPerson($data);
-}
+    "name": "Juan",
+    "second_name": "Carlos",
+    "lastname": "Pérez",
+    "second_lastname": "González",
+    "edad": 30,
+    "estado": "Activo",
+    "fecha_ingreso": "2024-06-13",
+    "direccion": "Calle Falsa 123",
+    "telefono": "123456789",
+    "cargo": "Ingeniero"
+}```
+
 <h3>Encode and decode example<h3>
 
 ```
