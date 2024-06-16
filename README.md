@@ -63,14 +63,45 @@
     └── README.md
 ```
 
-<h2>methods in controllers</h2>
- <p>Updated driver methods are the methods needed to make a CRUD<p><br>
- <b>create () {}</b><br>
- <b>update () {}</b><br>
- <b>readByID () {}</b><br>
- <b>readAll () {}</b><br>
- <b>delete () {}</b><br>
- <b>deleteWWithRelationShip () {}</b><br>
+<h2>methods expamples</h2>
 
+<h3>Set user or person example<h3>
+```
+    public function get()
+    {
+        //ejemplo del formato json de entrada de datos
+        $data = '{
+            "name": "Juan",
+            "second_name": "Carlos",
+            "lastname": "Pérez",
+            "second_lastname": "González",
+            "edad": 30,
+            "estado": "Activo",
+            "fecha_ingreso": "2024-06-13",
+            "direccion": "Calle Falsa 123",
+            "telefono": "123456789",
+            "cargo": "Ingeniero"
+        }';
+
+        // Simular el POST llamando a la función createPerson con los datos JSON
+        $this->createPerson($data);
+    }
+```
+<h3>ENcode and decode example<h3>
+```
+    public function get()
+    {
+        $EncryptedKey = $this->key;
+
+        $dataToEncrypt = 'ejemplo de cifrado';
+        $encodedData = $this->encodeData($dataToEncrypt, $EncryptedKey);
+
+        echo 'Datos cifrados: ' . $encodedData . PHP_EOL . '<br>';
+
+        $decodedData = $this->decodeData($encodedData, $EncryptedKey);
+
+        echo 'Datos descifrados: ' . $decodedData . PHP_EOL;
+    }
+```
 
  

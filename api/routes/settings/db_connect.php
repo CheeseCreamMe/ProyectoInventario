@@ -4,8 +4,8 @@ require_once "./routes/settings/db_values.php";
 
 class Connection
 {
-    protected $conn;
-
+    protected $conn; 
+    protected $key = 'thisisaverysecretkey!1234567890abcdef'; // Clave de cifrado (debería ser segura y secreta)
     protected function connect()
     {
         try {
@@ -34,5 +34,34 @@ class Connection
         $cadena = preg_replace($valores_eliminar, "", $cadena);
         return $cadena;
     }
+
+    protected function encodeData($data, $key)
+    {
+        // Generar un IV (vector de inicialización) aleatorio
+        $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length('aes-256-cbc'));
+        $encryptedData = openssl_encrypt($data, 'aes-256-cbc', $key, 0, $iv);
+    
+        // Combinar el IV y los datos cifrados para facilitar el descifrado
+        $encodedData = base64_encode($iv . $encryptedData);
+    
+        return $encodedData;
+    }
+    
+    protected function decodeData($encodedData, $key)
+    {
+        // Decodificar los datos de Base64
+        $data = base64_decode($encodedData);
+    
+        $ivLength = openssl_cipher_iv_length('aes-256-cbc');
+        $iv = substr($data, 0, $ivLength);
+        $encryptedData = substr($data, $ivLength);
+    
+        // Descifrar los datos
+        $decryptedData = openssl_decrypt($encryptedData, 'aes-256-cbc', $key, 0, $iv);
+    
+        return $decryptedData;
+    }
+    
+    
 }
 ?>

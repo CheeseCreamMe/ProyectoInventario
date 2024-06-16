@@ -1,6 +1,7 @@
 <?php
 
 class PersonModel {
+    public $id;
     public $name;
     public $lastname;
     public $secondName;
