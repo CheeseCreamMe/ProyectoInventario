@@ -67,26 +67,26 @@
 
 <h3>Set user or person example<h3>
 
-    public function get()
-    {
-        //ejemplo del formato json de entrada de datos
-        $data = '{
-            "name": "Juan",
-            "second_name": "Carlos",
-            "lastname": "Pérez",
-            "second_lastname": "González",
-            "edad": 30,
-            "estado": "Activo",
-            "fecha_ingreso": "2024-06-13",
-            "direccion": "Calle Falsa 123",
-            "telefono": "123456789",
-            "cargo": "Ingeniero"
-        }';
+public function get()
+{
+    //ejemplo del formato json de entrada de datos
+    $data = '{
+        "name": "Juan",
+        "second_name": "Carlos",
+        "lastname": "Pérez",
+        "second_lastname": "González",
+        "edad": 30,
+        "estado": "Activo",
+        "fecha_ingreso": "2024-06-13",
+        "direccion": "Calle Falsa 123",
+        "telefono": "123456789",
+        "cargo": "Ingeniero"
+    }';
+    // Simular el POST llamando a la función createPerson con los datos JSON
+    $this->createPerson($data);
+}
+<h3>Encode and decode example<h3>
 
-        // Simular el POST llamando a la función createPerson con los datos JSON
-        $this->createPerson($data);
-    }
-<h3>ENcode and decode example<h3>
 ```
     public function get()
     {
