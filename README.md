@@ -66,7 +66,7 @@
 <h2>methods expamples</h2>
 
 <h3>Set user or person example<h3>
-```
+
     public function get()
     {
         //ejemplo del formato json de entrada de datos
@@ -86,7 +86,6 @@
         // Simular el POST llamando a la función createPerson con los datos JSON
         $this->createPerson($data);
     }
-```
 <h3>ENcode and decode example<h3>
 ```
     public function get()
