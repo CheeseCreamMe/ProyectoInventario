@@ -84,7 +84,6 @@
     "telefono": "123456789",
     "cargo": "Ingeniero"
 }
-```json
 
 <h3>Encode and decode example<h3>
 
