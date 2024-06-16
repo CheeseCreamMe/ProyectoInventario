@@ -71,8 +71,8 @@
 
 ## Ejemplo de Formato JSON de Entrada de Datos
 
-```json
-{
+```
+json {
     "name": "Juan",
     "second_name": "Carlos",
     "lastname": "Pérez",
@@ -84,6 +84,36 @@
     "telefono": "123456789",
     "cargo": "Ingeniero"
 }
+```
+### fin del ejemplo
+
+```
+public function get()
+    {
+        //ejemplo del formato json de entrada de datos
+        $data = {json de ejemplo};
+        // Simular el POST llamando a la función createPerson con los datos JSON
+        $this->createPerson($data);
+    }
+```
+
+<h3>Encode and decode example<h3>
+
+```
+    public function get()
+    {
+        $EncryptedKey = $this->key;
+
+        $dataToEncrypt = 'ejemplo de cifrado';
+        $encodedData = $this->encodeData($dataToEncrypt, $EncryptedKey);
+
+        echo 'Datos cifrados: ' . $encodedData . PHP_EOL . '<br>';
+
+        $decodedData = $this->decodeData($encodedData, $EncryptedKey);
+
+        echo 'Datos descifrados: ' . $decodedData . PHP_EOL;
+    }
+```
 
 <h3>Encode and decode example<h3>
 
