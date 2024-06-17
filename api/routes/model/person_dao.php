@@ -18,8 +18,7 @@ class PersonDAO extends Connection {
         $encryptedLastname = $this->encodeData($person->lastname, $this->key);
         $encryptedSecondLastname = $this->encodeData($person->secondLastname, $this->key);
         $encryptedDireccion = $this->encodeData($person->direccion, $this->key );
-        $encryptedTelefono = $this->encodeData($person->telefono, $this->key );
-
+        $encryptedTelefono = $this->encodeNumber($person->telefono, $this->key);
         // Bindear todos los parámetros
         $stmt->bindParam(":name", $encryptedName);
         $stmt->bindParam(":second_name", $encryptedSecondName);
@@ -32,7 +31,56 @@ class PersonDAO extends Connection {
         $stmt->bindParam(":telefono", $encryptedTelefono);
         $stmt->bindParam(":cargo", $person->cargo); 
 
-        return $stmt->execute();
+        try {
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return false;
+        }
+    }
+
+    protected function delete($id) {
+        $query = "DELETE FROM " . self::$tableName . " WHERE id = :id";
+        $stmt = $this->connect()->prepare($query);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        echo $query." ".$id;
+        try {
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return false;
+        }
+    }
+
+    public function readAll() {
+        $query = "SELECT * FROM " . self::$tableName;
+        $stmt = $this->connect()->prepare($query);
+    
+        try {
+            $stmt->execute();
+            $results = [];
+    
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $results[] = new PersonModel(
+                    $row['id'],
+                    $this->decodeData($row['name'], $this->key),
+                    $this->decodeData($row['lastname'], $this->key),
+                    $this->decodeData($row['second_name'], $this->key),
+                    $this->decodeData($row['second_lastname'], $this->key),
+                    $row['edad'],
+                    $row['estado'],
+                    $row['fecha_ingreso'],
+                    $this->decodeData($row['direccion'], $this->key),
+                    $this->decodeNumber($row['telefono'], $this->key),
+                    $row['cargo']
+                );
+            }
+    
+            return $results;
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return [];
+        }
     }
 }
 ?>
