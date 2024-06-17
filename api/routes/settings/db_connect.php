@@ -34,11 +34,11 @@ class Connection
         $cadena = preg_replace($valores_eliminar, "", $cadena);
         return $cadena;
     }
-
     protected function encodeData($data, $key)
     {
-        // Generar un IV (vector de inicialización) aleatorio
-        $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length('aes-256-cbc'));
+        // Generar un IV (vector de inicialización) aleatorio de la longitud correcta
+        $ivLength = openssl_cipher_iv_length('aes-256-cbc');
+        $iv = openssl_random_pseudo_bytes($ivLength);
         $encryptedData = openssl_encrypt($data, 'aes-256-cbc', $key, 0, $iv);
     
         // Combinar el IV y los datos cifrados para facilitar el descifrado
@@ -61,7 +61,17 @@ class Connection
     
         return $decryptedData;
     }
-    
-    
+
+    protected function encodeNumber($number, $key)
+    {
+        $numberStr = strval($number);
+        return $this->encodeData($numberStr, $key);
+    }
+
+    protected function decodeNumber($encodedNumber, $key)
+    {
+        $numberStr = $this->decodeData($encodedNumber, $key);
+        return $numberStr;
+    }
 }
 ?>
