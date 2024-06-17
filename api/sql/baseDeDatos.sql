@@ -12,6 +12,7 @@ CREATE TABLE personas (
     estado VARCHAR(50) NOT NULL,
     fecha_ingreso DATE NOT NULL,
     direccion VARCHAR(255),
-    telefono VARCHAR(20),
+    telefono VARCHAR(100),
     cargo VARCHAR(100)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+//el uso de campos tan grandes es por los datos encryptados
