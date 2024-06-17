@@ -63,11 +63,11 @@ I dont  know T_T
     └── package-lock.json
     └── README.md
 ```
-##  expamples
+#  examples
 
-# Create new person Examples
+## Create new person Examples
 
-## Ejemplo de Formato JSON de Entrada de Datos
+### Ejemplo de Formato JSON de Entrada de Datos
 
 ```
 json {
@@ -84,7 +84,7 @@ json {
 }
 ```
 
-## Ejemplo de para simular el metodo post en la entrada de datos
+### Ejemplo de para simular el metodo post en la entrada de datos
 ```
 public function get()
     {
