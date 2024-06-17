@@ -63,9 +63,9 @@ I dont  know T_T
     └── package-lock.json
     └── README.md
 ```
-## methods expamples
+##  expamples
 
-# Ejemplo de Uso de Funciones de Cifrado y Descifrado
+# Create new person Examples
 
 ## Ejemplo de Formato JSON de Entrada de Datos
 
@@ -79,11 +79,10 @@ json {
     "estado": "Activo",
     "fecha_ingreso": "2024-06-13",
     "direccion": "Calle Falsa 123",
-    "telefono": "123456789",
+    "telefono": 123456789,
     "cargo": "Ingeniero"
 }
 ```
-### fin del ejemplo
 
 ## Ejemplo de para simular el metodo post en la entrada de datos
 ```
