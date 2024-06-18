@@ -12,8 +12,10 @@ class PersonModel {
     public $direccion;
     public $telefono;
     public $cargo;
+    public $imagen;
 
-    public function __construct($id = null, $name = null, $lastname = null, $secondName = null, $secondLastname = null, $edad = null, $estado = null, $fechaIngreso = null, $direccion = null, $telefono = null, $cargo = null) {
+    public function __construct(
+        $id = null, $name = null, $lastname = null,$secondName = null, $secondLastname = null,$edad = null, $estado = null, $fechaIngreso = null,$direccion = null, $telefono = null, $cargo = null ,$imagen = null) {
         $this->id = $id;
         $this->name = $name;
         $this->lastname = $lastname;
@@ -25,6 +27,7 @@ class PersonModel {
         $this->direccion = $direccion;
         $this->telefono = $telefono;
         $this->cargo = $cargo;
+        $this->imagen = $imagen;
     }
 
     // Getters y Setters
@@ -55,10 +58,19 @@ class PersonModel {
     public function getSecondName() {
         return $this->secondName;
     }
-
+    
     public function setSecondName($secondName) {
         $this->secondName = $secondName;
     }
+
+    public function getImagen() {
+        return $this->imagen;
+    }
+
+    public function setImagen($imagen) {
+        $this->imagen = $imagen;
+    }
+
 
     public function getSecondLastname() {
         return $this->secondLastname;

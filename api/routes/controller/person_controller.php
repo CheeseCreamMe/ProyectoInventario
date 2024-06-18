@@ -6,7 +6,7 @@ class PersonController extends PersonDAO
     public function get()
     {
         echo "Hello World T_T";
-      /*
+        /*
         //crear perona
         $data = json_encode([
             "name" => "Cesar",
@@ -15,14 +15,15 @@ class PersonController extends PersonDAO
             "second_lastname" => "Hernandez",
             "edad" => 123,
             "estado" => "Activo",
-            "fecha_ingreso" => "2024-06-13",
-            "direccion" => "Calle Falsa 123",
+            "fecha_ingreso" => "2024-06-13", 
+            "direccion" => "", 
             "telefono" => 78891461,
             "cargo" => "Ingeniero",
+            "imagen" => "Ejemplo de ruta de imagem", //las imagenes se almacenan previamente y se pasa la ruta de acceso a una carpeta dentro del programa
         ]); 
         //eliminar persona 
         $data = json_encode(['id'=>15]);
-         */ 
+         */
         //$this->deletePerson($data);
         //$this->createPerson($data);
     }
@@ -34,10 +35,8 @@ class PersonController extends PersonDAO
             'message' => 'Método no permitido'
         ];
 
-
-        try {
-            $data = json_decode($jsonData, true);
-
+        $data = json_decode($jsonData, true);
+        if ($data['name'] && $data['lastname'] && $data['edad']) {
             $person = new PersonModel(
                 null,
                 $this->cleanString($data['name']),
@@ -49,17 +48,16 @@ class PersonController extends PersonDAO
                 $this->cleanString($data['fecha_ingreso']),
                 $this->cleanString($data['direccion']),
                 $this->cleanString($data['telefono']),
-                $this->cleanString($data['cargo'])
+                $this->cleanString($data['cargo']),
+                ($data['imagen'])//no es necesario limpir la cadena ya que esta proporcionada por una funcion y no por el usuario
             );
 
             if ($this->create($person)) {
                 $response['status'] = 'success';
-                $response['message'] = 'Persona creada';
+                $response['message'] = 'Persona creada: awebo';
             } else {
-                $response['message'] = 'Error al crear persona';
+                $response['message'] = 'Error al crear persona cod : 505';
             }
-        } catch (\Throwable $th) {
-            $response['message'] = 'Error al crear persona';
         }
 
         echo json_encode($response);
@@ -117,15 +115,15 @@ class PersonController extends PersonDAO
                         'cargo' => $person->getCargo()
                     ];
                 }
-            }
-            else $response['status'] = 'error';
+            } else $response['status'] = 'error';
         }
 
         echo json_encode($response);
     }
 
 
-    public function viewPerson()
+    public function viewPerson($id)
     {
+
     }
 }

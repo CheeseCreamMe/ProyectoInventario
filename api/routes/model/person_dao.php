@@ -7,8 +7,8 @@ class PersonDAO extends Connection {
 
     protected function create($person) {
 
-        $query = "INSERT INTO " . self::$tableName . " (name, second_name, lastname, second_lastname, edad, estado, fecha_ingreso, direccion, telefono, cargo) 
-            VALUES (:name, :second_name, :lastname, :second_lastname, :edad, :estado, :fecha_ingreso, :direccion, :telefono, :cargo)";
+        $query = "INSERT INTO " . self::$tableName . " (name, second_name, lastname, second_lastname, edad, estado, fecha_ingreso, direccion, telefono, cargo, imagen) 
+            VALUES (:name, :second_name, :lastname, :second_lastname, :edad, :estado, :fecha_ingreso, :direccion, :telefono, :cargo, :imagen)";
 
         $stmt = $this->connect()->prepare($query);
 
@@ -30,7 +30,8 @@ class PersonDAO extends Connection {
         $stmt->bindParam(":direccion", $encryptedDireccion);
         $stmt->bindParam(":telefono", $encryptedTelefono);
         $stmt->bindParam(":cargo", $person->cargo); 
-
+        $stmt->bindParam(":iamgen", $person->imagen);
+        
         try {
             return $stmt->execute();
         } catch (PDOException $e) {
@@ -72,7 +73,8 @@ class PersonDAO extends Connection {
                     $row['fecha_ingreso'],
                     $this->decodeData($row['direccion'], $this->key),
                     $this->decodeNumber($row['telefono'], $this->key),
-                    $row['cargo']
+                    $row['cargo'],
+                    $row['imagen']
                 );
             }
     
@@ -81,6 +83,11 @@ class PersonDAO extends Connection {
             echo "Error: " . $e->getMessage();
             return [];
         }
+    }
+
+    public function readById()
+    {
+
     }
 }
 ?>
