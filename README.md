@@ -34,33 +34,7 @@ I dont  know T_T
                 └── db_values.php
         └── 📁sql
             └── baseDeDatos.sql
-    └── 📁myProject
-        └── .eslintrc.cjs
-        └── .gitignore
-        └── index.html
-        └── package-lock.json
-        └── package.json
-        └── 📁public
-            └── 📁images
-            └── 📁svg
-                └── add.svg
-                └── graph.svg
-                └── mobile_search.svg
-                └── search.svg
-                └── vite.svg
-        └── README.md
-        └── 📁src
-            └── App.jsx
-            └── 📁assets
-                └── react assets
-            └── 📁components
-                └── components
-            └── 📁css
-                └── App.css
-                └── index.css
-            └── main.jsx
-        └── vite.config.js
-    └── package-lock.json
+
     └── README.md
 ```
 #  examples
@@ -69,6 +43,7 @@ I dont  know T_T
 
 ### Ejemplo de Formato JSON de Entrada de Datos
 
+<p> la verificacion de campos vacios se tendria que realizar previamente desde la capa del frontend, lo ideal seria intercambiar los parametros por una cadena ejemplo "no identificado", ya que la api esta ehcha para trabajar con una cadena aunque los campos permiten null, proximamente trabajare mas en ello<p>
 ```
 json {
     "name": "Juan",
@@ -81,6 +56,7 @@ json {
     "direccion": "Calle Falsa 123",
     "telefono": 123456789,
     "cargo": "Ingeniero"
+    "imagen" : "ejmplo de ruta de imagen" 
 }
 ```
 
