@@ -19,8 +19,8 @@ class Connection
     }
 
     protected function cleanString($cadena)
-    {
-        $valores_eliminar = array(
+    {   if(!empty($cadena)){
+            $valores_eliminar = array(
             "/<script>/i",
             "/<\/script>/i",
             "/select \* from/i",
@@ -32,8 +32,23 @@ class Connection
         );
         $cadena = trim($cadena);
         $cadena = preg_replace($valores_eliminar, "", $cadena);
+    }
+
         return $cadena;
     }
+
+    function verificarCamposVacios($arreglo) {
+        // Recorrer el arreglo
+        foreach ($arreglo as $campo) {
+            // Verificar si el campo está vacío
+            if (empty($campo)) {
+                // Si alguno está vacío, devolver false
+                return false;
+            }
+        }
+        return true;
+    }
+
     protected function encodeData($data, $key)
     {
         // Generar un IV (vector de inicialización) aleatorio de la longitud correcta
