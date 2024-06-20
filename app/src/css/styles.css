@@ -1,0 +1,64 @@
+@import url(vars.css);
+*{
+    font-family: "Source Code Pro", monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: var(--main-bg-color);
+    color: var(--main-text-color);
+}
+/*
+encabezados, titulos y subtitulos
+*/
+.tittle{
+    font-size: 2rem;
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.secondaryTittle{
+    font-size: 1.8rem;
+    text-align: center;
+    color: var(--secondary-color);
+}
+/*
+componentes y herramientas
+*/
+.myTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 1.5rem;
+    text-align: left;
+    border: var(--main-text-color) 1px solid;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    font-size: 1rem;
+}
+
+.myTable th, .myTable td {
+    padding: 0.75rem 1rem;
+    border-right: var(--secondary-color) 1px solid;
+    border-bottom: var(--secondary-color) 1px solid;
+    font-size: 1rem;
+}
+
+.myTable th {
+    background-color: var(--primary-color);
+}
+
+.myTable .firts_var {
+    border-right: none;
+}
+
+.myTable .last_var {
+    border-right: none;
+}
+.myTable th:hover {
+    background-color: var(--secondary-color);
+}
+.myTable img {
+    width: 120px;
+    height: auto;
+}
