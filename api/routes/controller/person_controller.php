@@ -16,10 +16,10 @@ class PersonController extends PersonDAO
             "edad" => 123,
             "estado" => "Activo",
             "fecha_ingreso" => "2024-06-13", 
-            "direccion" => "", 
+            "direccion" => "Calle de ejemplo", 
             "telefono" => 78891461,
             "cargo" => "Ingeniero",
-            "imagen" => "Ejemplo de ruta de imagem", //las imagenes se almacenan previamente y se pasa la ruta de acceso a una carpeta dentro del programa
+            "imagen" => "app/public/personas/e.jpg", //las imagenes se almacenan previamente y se pasa la ruta de acceso a una carpeta dentro del programa
         ]); 
         //eliminar persona 
         $data = json_encode(['id'=>15]);
@@ -112,7 +112,8 @@ class PersonController extends PersonDAO
                         'fechaIngreso' => $person->getFechaIngreso(),
                         'direccion' => $person->getDireccion(),
                         'telefono' => $person->getTelefono(),
-                        'cargo' => $person->getCargo()
+                        'cargo' => $person->getCargo(),
+                        'imagen' => $person->getImagen()
                     ];
                 }
             } else $response['status'] = 'error';

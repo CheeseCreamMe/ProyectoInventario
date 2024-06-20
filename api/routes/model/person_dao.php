@@ -30,7 +30,7 @@ class PersonDAO extends Connection {
         $stmt->bindParam(":direccion", $encryptedDireccion);
         $stmt->bindParam(":telefono", $encryptedTelefono);
         $stmt->bindParam(":cargo", $person->cargo); 
-        $stmt->bindParam(":iamgen", $person->imagen);
+        $stmt->bindParam(":imagen", $person->imagen);
         
         try {
             return $stmt->execute();
