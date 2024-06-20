@@ -26,24 +26,41 @@ I dont  know T_T
         └── router.php
         └── 📁routes
             └── 📁controller
-                └── controllers
+                └── person_controller.php
+                └── usuario_controller.php
             └── 📁model
-                └── DAO, objects
+                └── person_dao.php
+                └── person_model.php
+                └── user_dao.php
+                └── user_model.php
             └── 📁settings
                 └── db_connect.php
                 └── db_values.php
         └── 📁sql
             └── baseDeDatos.sql
-
+    └── 📁app
+        └── 📁components
+            └── tablePerson.js
+        └── index.js
+        └── 📁pages
+            └── Personas.js
+        └── 📁public
+            └── 📁personas
+                └── e.jpg
+        └── 📁src
+            └── 📁css
+                └── styles.css
+                └── vars.css
+    └── index.html
     └── README.md
 ```
 #  examples
 
 ## Create new person Examples
 
-### Ejemplo de Formato JSON de Entrada de Datos
-
 <p> la verificacion de campos vacios se tendria que realizar previamente desde la capa del frontend, lo ideal seria intercambiar los parametros por una cadena ejemplo "no identificado", ya que la api esta ehcha para trabajar con una cadena aunque los campos permiten null, proximamente trabajare mas en ello<p>
+
+### Ejemplo de Formato JSON de Entrada de Datos
 ```
 json {
     "name": "Juan",
