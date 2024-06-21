@@ -3,7 +3,9 @@
 :root {
     --main-bg-color: #272829;
     --main-text-color: #FFF6E0;
-    --primary-color: #61677A;
-    --secondary-color: #D8D9DA;
-    --font-size: 16px;
+    --primary-color: #74ad72;
+    --secondary-color: #0ee088;
+    --danger-color: #991414;
+    --info-color: #175ee2;
+    --comment-color: #6b7485;
 }

@@ -6,12 +6,13 @@
     box-sizing: border-box;
     background: var(--main-bg-color);
     color: var(--main-text-color);
+    font-size: 1rem;
 }
 /*
 encabezados, titulos y subtitulos
 */
 .tittle{
-    font-size: 2rem;
+    font-size: 2rem !important;
     text-align: center;
     color: var(--primary-color);
     font-weight: 600;
@@ -24,6 +25,9 @@ encabezados, titulos y subtitulos
 }
 /*
 componentes y herramientas
+*/
+/*
+    Tablas de datos
 */
 .myTable {
     width: 100%;
@@ -61,4 +65,84 @@ componentes y herramientas
 .myTable img {
     width: 120px;
     height: auto;
+}
+/*
+    Formularios de Registro
+*/
+#formAdd {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 0.5rem;
+    display: none;
+}
+
+.MyFormulario {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+}
+
+.form-group input[type="file"] {
+    padding: 0.5rem;
+}
+
+#closeFormButton {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    padding: 10px 20px;
+    background-color: var(--danger-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+/*
+Estilos de los botones
+*/
+#showFormButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color:  var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
