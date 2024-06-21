@@ -1,5 +1,5 @@
 <?php
-const SERVER="localhost";
+const SERVER="127.0.0.1";
 const DB="registro_personas";
 const USER="root";
 const PASSWORD="";

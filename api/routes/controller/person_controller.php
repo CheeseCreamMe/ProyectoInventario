@@ -16,7 +16,7 @@ class PersonController extends PersonDAO
             "edad" => 123,
             "estado" => "Activo",
             "fecha_ingreso" => "2024-06-13", 
-            "direccion" => "Calle de ejemplo", 
+            "direccion" => "Calle de ejemplo 1234", 
             "telefono" => 78891461,
             "cargo" => "Ingeniero",
             "imagen" => "app/public/personas/e.jpg", //las imagenes se almacenan previamente y se pasa la ruta de acceso a una carpeta dentro del programa
