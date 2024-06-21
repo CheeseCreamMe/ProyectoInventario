@@ -1,6 +1,5 @@
     const apiUrl = "http://localhost/proyecto/api/person/getAllPersons";
 
-    
     async function fetchData() {
         try {
             const response = await fetch(apiUrl);
@@ -42,7 +41,7 @@
     
     export async function getTable() {
         const data = await fetchData();
-        const app = document.getElementById('readData');
+        const app = document.getElementById('dataTable');
         app.innerHTML = renderTemplate(data);
     }
 
