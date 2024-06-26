@@ -37,7 +37,7 @@ class Connection
         return $cadena;
     }
 
-    function verificarCamposVacios($arreglo) {
+    protected function verificarCamposVacios($arreglo) {
         // Recorrer el arreglo
         foreach ($arreglo as $campo) {
             // Verificar si el campo está vacío
