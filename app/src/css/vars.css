@@ -5,7 +5,8 @@
     --main-text-color: #FFF6E0;
     --primary-color: #74ad72;
     --secondary-color: #0ee088;
-    --danger-color: #991414;
+    --danger-color: #b92727;
     --info-color: #175ee2;
     --comment-color: #6b7485;
+    --border-radius:0.4rem;
 }

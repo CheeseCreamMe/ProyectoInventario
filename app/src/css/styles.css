@@ -12,7 +12,7 @@
 encabezados, titulos y subtitulos
 */
 .tittle{
-    font-size: 2rem !important;
+    font-size: 3rem !important;
     text-align: center;
     color: var(--primary-color);
     font-weight: 600;
@@ -36,16 +36,14 @@ componentes y herramientas
     font-size: 1.5rem;
     text-align: left;
     border: var(--main-text-color) 1px solid;
-    border-radius: 0.5rem;
+    border-radius: var(--border-radius);
     overflow: hidden;
-    font-size: 1rem;
 }
 
 .myTable th, .myTable td {
     padding: 0.75rem 1rem;
     border-right: var(--secondary-color) 1px solid;
     border-bottom: var(--secondary-color) 1px solid;
-    font-size: 1rem;
 }
 
 .myTable th {
@@ -90,7 +88,7 @@ componentes y herramientas
     margin: 0 auto;
     padding: 20px;
     border: 1px solid var(--secondary-color);
-    border-radius: 0.5rem;
+    border-radius: var(--border-radius);
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
@@ -113,27 +111,17 @@ componentes y herramientas
     padding: 8px;
     box-sizing: border-box;
     border: 1px solid var(--secondary-color);
-    border-radius: 5px;
+    border-radius: var(--border-radius);
 }
 
 .form-group input[type="file"] {
     padding: 0.5rem;
 }
 
-#closeFormButton {
-    position: fixed;
-    top: 2rem;
-    right: 2rem;
-    padding: 10px 20px;
-    background-color: var(--danger-color);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
 .form-group.full-width {
     grid-column: 1 / -1;
 }
+
 /*
 Estilos de los botones
 */
@@ -143,6 +131,22 @@ Estilos de los botones
     padding: 10px 20px;
     background-color:  var(--primary-color);
     border: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     cursor: pointer;
+}
+#closeFormButton {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    padding: 10px 20px;
+    background-color: var(--danger-color);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+#editButton{
+    background-color: var(--info-color);
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    border: none;
 }
