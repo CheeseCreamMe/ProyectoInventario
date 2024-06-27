@@ -1,6 +1,7 @@
 # Purpose of the project
 I dont  know T_T
-## Languejes
+## API
+### Languejes
 <p><strong>PHP:</strong>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/300px-PHP-logo.svg.png" alt="PHP" width="50"></p>
 <p><strong>JS:</strong>
@@ -10,13 +11,13 @@ I dont  know T_T
 <p><strong>CSS:</strong><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/200px-CSS3_logo_and_wordmark.svg.png?20160623125136" alt="CSS" width="50"></p>
 <br>
 
-## frameworks
+### frameworks
 <p><strong>react:</strong> <a href="https://react.dev/" target="_blank" rel="noopener noreferrer"><img src="https://th.bing.com/th/id/OIP.33CwBYkmnMfpA9Djup22JwHaHa?rs=1&pid=ImgDetMain" alt="JQuery" width="50"></a></p>
 <p><strong>Bootstrap:</strong> <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/200px-Bootstrap_logo.svg.png?20160623125136" alt="Bootstrap" width="50"></a></p>
 
-# Folder Structure
+### Folder Structure
 
-## Model View Controller(MVC)
+#### Model View Controller(MVC)
 
 ```
 └── 📁proyecto
@@ -38,29 +39,15 @@ I dont  know T_T
                 └── db_values.php
         └── 📁sql
             └── baseDeDatos.sql
-    └── 📁app
-        └── 📁components
-            └── tablePerson.js
-        └── index.js
-        └── 📁pages
-            └── Personas.js
-        └── 📁public
-            └── 📁personas
-                └── e.jpg
-        └── 📁src
-            └── 📁css
-                └── styles.css
-                └── vars.css
-    └── index.html
-    └── README.md
 ```
-#  examples
 
-## Create new person Examples
+###  examples
 
-<p> la verificacion de campos vacios se tendria que realizar previamente desde la capa del frontend, lo ideal seria intercambiar los parametros por una cadena ejemplo "no identificado", ya que la api esta ehcha para trabajar con una cadena aunque los campos permiten null, proximamente trabajare mas en ello<p>
+#### Create new person Examples
 
-### Ejemplo de Formato JSON de Entrada de Datos
+<p> La idea general es mantener separada lo maximo posible la logica de negocio del fornt, por ello se opto por el modelo mvc y se hace uso y consumo de una api, para fines practicos y que sea entenible el proyecto se han tabjado juntos<p>
+
+#### Ejemplo de Formato JSON de Entrada de Datos
 ```
 json {
     "name": "Juan",
@@ -77,7 +64,7 @@ json {
 }
 ```
 
-### Ejemplo de para simular el metodo post en la entrada de datos
+#### Ejemplo de para simular el metodo post en la entrada de datos
 ```
 public function get()
     {
@@ -88,7 +75,9 @@ public function get()
     }
 ```
 
-### Encode and decode example
+#### Encode and decode example
+
+<p>Tambien esta la funcion para cifrar numeros la cual lo que hacer es: primero los convierte a acena y asi los codifica en X16</p>
 
 ```
     public function get()
@@ -104,4 +93,45 @@ public function get()
 
         echo 'Datos descifrados: ' . $decodedData . PHP_EOL;
     }
+```
+## APP
+
+### Folder Structure
+
+```
+    └── 📁app
+        └── 
+        └── index.js
+        └── 📁pages
+            └── Personas.js
+        └── 📁public
+            └── 📁personas
+                └── e.jpg
+        └── 📁src
+            └── 📁css
+                └── styles.css
+                └── vars.css
+                📁components
+                └── tablePerson.js
+    └── index.html
+    └── README.md
+```
+
+### Paleta de colores
+
+<p>La paleta de coloress del proyecto esta en el archivo vars.css en donde estan lo principales recuross utilizados para dar estilos al proyecto, ayudando un poco a ala modularidadd del proyecto<p>
+
+```
+    :root {
+        --main-bg-color: #272829; //background
+        --main-text-color: #FFF6E0;
+        --primary-color: #74ad72;
+        --secondary-color: #0ee088;
+        --danger-color: #b92727;
+        --danger-color-hover: #dd3737;
+        --info-color: #175ee2;
+        --info-color-hover: #2a6deb;
+        --comment-color: #6b7485;
+        --border-radius:0.4rem; //6px
+    }   
 ```
