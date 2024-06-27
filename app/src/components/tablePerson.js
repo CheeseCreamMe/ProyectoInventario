@@ -18,15 +18,18 @@ function renderTemplate(data) {
 
     const rows = data.map(person => `
         <tr>
-            <td class="first_var">${person.name}</td>
-            <td>${person.secondName || ''}</td>
-            <td class="first_var">${person.lastname}</td>
-            <td>${person.secondLastname || ''}</td>
-            <td>${person.direccion || ''}</td>
+            <td colspan="2">${person.name} ${person.secondName || 'dafult'}</td>
+            
+            <td colspan="2">${person.lastname} ${person.secondLastname || 'dafult'}</td>
+           
+            <td>${person.direccion || 'dafult'}</td>
             <td>${person.telefono}</td>
             <td>${person.estado}</td>
             <td><img src="${person.imagen}" alt="Imagen de ${person.name}" width="50"></td>
-            <td class="last_var"><button type="button" value="${person.id}" id="editButton">Editar</button></td>
+            <td class="last_var">
+                <button type="button" value="${person.id}" id="editButton">Editar</button>
+                <button type="button" value="${person.id}" id="deleteButton">Eliminar</button>
+            </td>
         </tr>
     `).join('');
 

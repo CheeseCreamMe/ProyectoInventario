@@ -1,5 +1,7 @@
-import {getTable} from "../app/components/tablePerson.js";
-import { renderFormPersona } from "./components/formCreatePerson.js";
+//esta es la pagina de personas antes de hacer los cambios 
+//lo proximo a hacer es un enrutador para acceder solo al js que quiero
+import {getTable} from "../app/src/components/tablePerson.js";
+import { renderFormPersona } from "./src/components/formCreatePerson.js";
 // Función para generar HTML basado en una plantilla
 function renderTemplate() {
     return `
