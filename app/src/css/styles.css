@@ -48,10 +48,11 @@ componentes y herramientas
 
 .myTable th {
     background-color: var(--primary-color);
+    color: var(--main-bg-color);
 }
 
 .myTable .firts_var {
-    border-right: none;
+    border: none;
 }
 
 .myTable .last_var {
@@ -133,6 +134,8 @@ Estilos de los botones
     border: none;
     border-radius: var(--border-radius);
     cursor: pointer;
+    color: var(--main-bg-color);
+    font-weight: 600;
 }
 #closeFormButton {
     position: fixed;
@@ -149,4 +152,25 @@ Estilos de los botones
     padding: 0.5rem;
     border-radius: var(--border-radius);
     border: none;
+}
+#deleteButton{
+    background-color: var(--danger-color);
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    border: none;
+}
+#sendData {
+    grid-column: 1 / -1; /* Hacer que ocupe todo el ancho */
+    padding: 10px;
+    background-color: var(--info-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#sendData:hover {
+    background-color: var(--info-color-hover);
 }

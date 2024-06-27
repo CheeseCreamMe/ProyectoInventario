@@ -6,7 +6,9 @@
     --primary-color: #74ad72;
     --secondary-color: #0ee088;
     --danger-color: #b92727;
+    --danger-color-hover: #dd3737;
     --info-color: #175ee2;
+    --info-color-hover: #2a6deb;
     --comment-color: #6b7485;
     --border-radius:0.4rem;
 }
