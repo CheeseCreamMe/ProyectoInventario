@@ -28,41 +28,61 @@ class PersonController extends PersonDAO
         //$this->createPerson($data);
     }
 
-    public function createPerson($jsonData = null)
+    public function createPerson()
     {
         $response = [
             'status' => 'error',
             'message' => 'Método no permitido'
         ];
 
-        $data = json_decode($jsonData, true);
+        // Verifica que la solicitud sea POST
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $data = json_decode(file_get_contents('php://input'), true);
 
-        $requiredData = [
-            $data['name'],
-            $data['lastname'],
-            $data['edad'],
-            $data['cargo'],
-            $data['direccion'],
-            $data['imagen'],
-            $data['estado']
-        ];
+            // Verifica si los datos necesarios están presentes
+            $requiredFields = ['name', 'lastname', 'secondName', 'secondLastname', 'age', 'status', 'accessDate', 'direction', 'celphone', 'cargo', 'image'];
+            foreach ($requiredFields as $field) {
+                if (empty($data[$field])) {
+                    $response['message'] = "Falta el campo: $field";
+                    echo json_encode($response);
+                    return;
+                }
+            }
 
-        if (self::verificarCamposVacios($requiredData)) {
+            // Procesa la imagen en base64
+            $imageData = $data['image'];
+            $imageName = 'img_' . uniqid() . '.jpg'; // Cambia la extensión según el tipo de imagen que esperes
+            $imagePath = '/app/public/personas/' . $imageName;
+            $imageROOT = $_SERVER['DOCUMENT_ROOT'] . '/proyecto/'.$imagePath;
+
+            // Decodifica la imagen y guarda en el servidor
+            list($type, $imageData) = explode(';', $imageData);
+            list(, $imageData)      = explode(',', $imageData);
+            $imageData = base64_decode($imageData);
+
+            if (file_put_contents($imageROOT, $imageData) === false) {
+                $response['message'] = 'Error al guardar la imagen';
+                echo json_encode($response);
+                return;
+            }
+
+            // Crear la instancia del modelo de persona
             $person = new PersonModel(
                 null,
                 $this->cleanString($data['name']),
+                $this->cleanString($data['secondName']),
                 $this->cleanString($data['lastname']),
-                $this->cleanString($data['second_name']),
-                $this->cleanString($data['second_lastname']),
-                $this->cleanString($data['edad']),
-                $this->cleanString($data['estado']),
-                $this->cleanString($data['fecha_ingreso']),
-                $this->cleanString($data['direccion']),
-                $this->cleanString($data['telefono']),
+                $this->cleanString($data['secondLastname']),
+                $this->cleanString($data['age']),
+                $this->cleanString($data['status']),
+                $this->cleanString($data['accessDate']),
+                $this->cleanString($data['direction']),
+                $this->cleanString($data['celphone']),
                 $this->cleanString($data['cargo']),
-                ($data['imagen']) //no es necesario limpir la cadena ya que esta proporcionada por una funcion y no por el usuario
+                $imagePath // Guarda solo el nombre de la imagen
             );
 
+            // Inserta la nueva persona en la base de datos
             if ($this->create($person)) {
                 $response['status'] = 'success';
                 $response['message'] = 'Persona creada';
@@ -70,11 +90,12 @@ class PersonController extends PersonDAO
                 $response['message'] = 'Error al crear persona cod : 505';
             }
         } else {
-            $response['message'] = 'Faltan datos importantes';
+            $response['message'] = 'Método no permitido';
         }
 
         echo json_encode($response);
     }
+
 
     public function deletePerson($id)
     {
@@ -148,7 +169,7 @@ class PersonController extends PersonDAO
 
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $person = $this->readById($id);
-            
+
             if ($person) {
                 $response['status'] = 'success';
                 $response['message'] = 'Personas encontradas';
@@ -172,53 +193,54 @@ class PersonController extends PersonDAO
     }
 
     public function updatePerson($id)
-{
-    $response = [
-        'status' => 'error',
-        'message' => 'Método no permitido'
-    ];
+    {
+        $response = [
+            'status' => 'error',
+            'message' => 'Método no permitido'
+        ];
 
-    if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
-        // Obtener los datos del cuerpo de la solicitud
-        $input = json_decode(file_get_contents('php://input'), true);
+        if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
+            // Obtener los datos del cuerpo de la solicitud
+            $input = json_decode(file_get_contents('php://input'), true);
 
-        if (isset($input['name']) && isset($input['lastname']) && isset($input['second_name']) &&
-            isset($input['second_lastname']) && isset($input['edad']) && isset($input['estado']) &&
-            isset($input['fecha_ingreso']) && isset($input['direccion']) && isset($input['telefono']) &&
-            isset($input['cargo']) && isset($input['imagen'])) {
+            if (
+                isset($input['name']) && isset($input['lastname']) && isset($input['second_name']) &&
+                isset($input['second_lastname']) && isset($input['edad']) && isset($input['estado']) &&
+                isset($input['fecha_ingreso']) && isset($input['direccion']) && isset($input['telefono']) &&
+                isset($input['cargo']) && isset($input['imagen'])
+            ) {
 
-            try {
-                $person = new PersonModel();
-                $person->setId($id);
-                $person->setName($input['name']);
-                $person->setLastname($input['lastname']);
-                $person->setSecondName($input['second_name']);
-                $person->setSecondLastname($input['second_lastname']);
-                $person->setEdad($input['edad']);
-                $person->setEstado($input['estado']);
-                $person->setFechaIngreso($input['fecha_ingreso']);
-                $person->setDireccion($input['direccion']);
-                $person->setTelefono($input['telefono']);
-                $person->setCargo($input['cargo']);
-                $person->setImagen($input['imagen']);
+                try {
+                    $person = new PersonModel();
+                    $person->setId($id);
+                    $person->setName($input['name']);
+                    $person->setLastname($input['lastname']);
+                    $person->setSecondName($input['second_name']);
+                    $person->setSecondLastname($input['second_lastname']);
+                    $person->setEdad($input['edad']);
+                    $person->setEstado($input['estado']);
+                    $person->setFechaIngreso($input['fecha_ingreso']);
+                    $person->setDireccion($input['direccion']);
+                    $person->setTelefono($input['telefono']);
+                    $person->setCargo($input['cargo']);
+                    $person->setImagen($input['imagen']);
 
-                $updated = $this->update($person);
+                    $updated = $this->update($person);
 
-                if ($updated) {
-                    $response['status'] = 'success';
-                    $response['message'] = 'Persona actualizada';
-                } else {
+                    if ($updated) {
+                        $response['status'] = 'success';
+                        $response['message'] = 'Persona actualizada';
+                    } else {
+                        $response['message'] = 'Error al actualizar persona';
+                    }
+                } catch (\Throwable $th) {
                     $response['message'] = 'Error al actualizar persona';
                 }
-            } catch (\Throwable $th) {
-                $response['message'] = 'Error al actualizar persona';
+            } else {
+                $response['message'] = 'Datos incompletos';
             }
-        } else {
-            $response['message'] = 'Datos incompletos';
         }
+
+        echo json_encode($response);
     }
-
-    echo json_encode($response);
-}
-
 }
