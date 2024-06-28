@@ -1,7 +1,10 @@
 //esta es la pagina de personas antes de hacer los cambios 
 //lo proximo a hacer es un enrutador para acceder solo al js que quiero
+//importar componentes
 import {getTable} from "../app/src/components/tablePerson.js";
 import { renderFormPersona } from "./src/components/formCreatePerson.js";
+//importar funcionalidades
+import { sendDataToAPIFromPerson } from "./api/apiService.js";
 // Función para generar HTML basado en una plantilla
 function renderTemplate() {
     return `
@@ -25,4 +28,7 @@ app.innerHTML = renderTemplate();
 
 getTable();
 renderFormPersona();
-
+document.getElementById('formulario').addEventListener('submit', (e) => {
+    e.preventDefault();
+    sendDataToAPIFromPerson();
+})
